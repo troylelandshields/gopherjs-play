@@ -14,9 +14,13 @@ func main() {
 
 	btn := document.GetElementByID("btn")
 	btn.AddEventListener("click", false, func(event dom.Event) {
+		var x string
 		img := document.CreateElement("img").(*dom.HTMLImageElement)
 		img.Src = "https://www.thispersondoesnotexist.com/image?" + strconv.Itoa(int(time.Now().Unix()))
 		img.Height = 250
+
+		panic("Oops")
+
 		document.GetElementByID("container").AppendChild(img)
 	})
 }
